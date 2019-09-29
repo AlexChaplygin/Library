@@ -22,10 +22,10 @@ public class Book {
     @Column(name = "author", nullable = false)
     private String author;
 
-    @Column(name = "date", nullable = false)
-    private Date date;
+    @Column(name = "release_date", nullable = false)
+    private Date releaseDate;
 
-    @ManyToOne
-    @JoinColumn(name = "reader_id", nullable = false, referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE})
+    @JoinColumn(name = "reader_id")
     private Reader reader;
 }

@@ -11,6 +11,22 @@ CREATE DATABASE library
     CONNECTION LIMIT = -1;
 
 
+-- Table: public.reader
+
+-- DROP TABLE public.reader;
+
+CREATE TABLE public.reader
+(
+    id   SERIAL                 NOT NULL PRIMARY KEY,
+    name character varying(255) NOT NULL
+)
+    WITH (
+        OIDS = FALSE
+    );
+ALTER TABLE public.reader
+    OWNER TO postgres;
+
+
 -- Table: public.book
 
 -- DROP TABLE public.book;
@@ -27,20 +43,4 @@ CREATE TABLE public.book
         OIDS = FALSE
     );
 ALTER TABLE public.book
-    OWNER TO postgres;
-
-
--- Table: public.reader
-
--- DROP TABLE public.reader;
-
-CREATE TABLE public.reader
-(
-    id   SERIAL                 NOT NULL PRIMARY KEY,
-    name character varying(255) NOT NULL
-)
-    WITH (
-        OIDS = FALSE
-    );
-ALTER TABLE public.reader
     OWNER TO postgres;

@@ -19,6 +19,6 @@ public class Reader {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "reader", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "reader", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
     private Set<Book> books;
 }
