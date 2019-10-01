@@ -89,3 +89,8 @@ function deleteBook(Element) {
         });
     }
 }
+
+function relocate_home()
+{
+    location.href = "index.html";
+}

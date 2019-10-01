@@ -46,9 +46,9 @@ public class BookServiceImpl implements BookService {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
-    public void saveBook(BookDTO bookDTO) {
+    public Book saveBook(BookDTO bookDTO) {
         bookDTO.setReleaseDate(new Date());
-        bookRepository.save(mapper.map(bookDTO, Book.class));
+        return bookRepository.save(mapper.map(bookDTO, Book.class));
     }
 
     @Override

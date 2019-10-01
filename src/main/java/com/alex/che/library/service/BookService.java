@@ -1,6 +1,7 @@
 package com.alex.che.library.service;
 
 import com.alex.che.library.dto.BookDTO;
+import com.alex.che.library.entity.Book;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ public interface BookService {
 
     List<BookDTO> findAllBooks();
 
-    void saveBook(BookDTO bookDTO);
+    Book saveBook(BookDTO bookDTO);
 
     void deleteBookById(Long id);
 }
